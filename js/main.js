@@ -123,9 +123,3 @@ function saveCanvas(elLink) {
     elLink.download = 'my-img.jpg';
 
 }
-
-
-// find the bg color and draw new canvas
-function clearCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
