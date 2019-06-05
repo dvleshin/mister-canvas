@@ -74,6 +74,9 @@ function draw(ev) {
         case 'circleShape':
             drawCircle(shapeColor)
             break;
+        case 'glowShape':
+            drawGlow(shapeColor)
+            break;
     }
 }
 
@@ -83,6 +86,7 @@ function drawSimple(shapeColor) {
     ctx.lineTo(currX, currY);
     ctx.strokeStyle = shapeColor;
     ctx.lineWidth = 5;
+    ctx.shadowBlur = 0;
     ctx.stroke();
     ctx.closePath();
 }
@@ -90,7 +94,22 @@ function drawSimple(shapeColor) {
 function drawCircle(shapeColor) {
     ctx.beginPath();
     ctx.arc(currX, currY, 50, 0, 2 * Math.PI);
+    ctx.lineWidth = 5;
+    ctx.shadowBlur = 0;
     ctx.strokeStyle = shapeColor;
+    ctx.stroke();
+}
+
+
+function drawGlow(shapeColor) {
+    ctx.beginPath();
+    ctx.moveTo(prevX, prevY);
+    ctx.lineTo(currX, currY);
+    ctx.lineWidth = 30;
+    ctx.lineJoin = ctx.lineCap = 'round';
+    ctx.strokeStyle = shapeColor;
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = 'rgb(58, 225, 0)';
     ctx.stroke();
 }
 
