@@ -1,3 +1,39 @@
 body {
     margin: 0;
 }
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    background-color: #d7d7d7;
+    border-radius: 10px;
+    border-radius: 8px;
+}
+
+button {
+    border: none;
+    background-color: #d7d7d7;
+}
+
+input {
+    border: none;
+    background-color: #d7d7d7;   
+}
+
+.clear {
+    border: none;
+}
+
+select {
+    margin-bottom: 10px;
+    margin-top: 9px;
+    font-family: 'Playfair Display', serif;
+}
+
+span {
+    font-family: 'Playfair Display', serif;
+}
+
+
+
