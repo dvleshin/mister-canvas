@@ -66,9 +66,6 @@ function onDraw(action, ev) {
 function draw(ev) {
     let shape = document.querySelector('#shape').value;
     let shapeColor = document.querySelector('#shapeColor').value
-
-
-
     switch (shape) {
         case 'simpleShape':
             drawSimple(shapeColor)
