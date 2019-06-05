@@ -72,7 +72,7 @@ function draw(ev) {
             drawSimple(shapeColor)
             break;
         case 'circleShape':
-            console.log('circleShape');
+            drawCircle(shapeColor)
             break;
     }
 }
@@ -87,6 +87,13 @@ function drawSimple(shapeColor) {
     ctx.closePath();
 }
 
+function drawCircle(shapeColor) {
+    ctx.beginPath();
+    ctx.arc(currX, currY, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = shapeColor;
+    ctx.stroke();
+}
+
 
 
 
@@ -94,5 +101,5 @@ function drawSimple(shapeColor) {
 
 // find the bg color and draw new canvas
 function clearCanvas() {
-ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
