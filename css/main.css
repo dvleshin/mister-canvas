@@ -23,6 +23,7 @@ input {
 
 .clear {
     border: none;
+    font-size: 17px;
 }
 
 select {
@@ -33,6 +34,12 @@ select {
 
 span {
     font-family: 'Playfair Display', serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 

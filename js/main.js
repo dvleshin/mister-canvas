@@ -29,7 +29,9 @@ function init() {
 
 function onChangeBgColor() {
     let color = document.querySelector('#bgColor').value
-    document.querySelector('body').style.backgroundColor = color;
+    ctx.rect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = color;
+    ctx.fill();
 }
 
 function onDraw(action, ev) {
@@ -115,7 +117,12 @@ function drawGlow(shapeColor) {
 
 
 
+function saveCanvas(elLink) {
+    const data = canvas.toDataURL();
+    elLink.href = data;
+    elLink.download = 'my-img.jpg';
 
+}
 
 
 // find the bg color and draw new canvas
