@@ -86,3 +86,13 @@ function drawSimple(shapeColor) {
     ctx.stroke();
     ctx.closePath();
 }
+
+
+
+
+
+
+// find the bg color and draw new canvas
+function clearCanvas() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
