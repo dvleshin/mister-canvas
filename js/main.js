@@ -63,7 +63,7 @@ function onDraw(action, ev) {
 
 }
 
-function draw(ev) {
+function draw() {
     let shape = document.querySelector('#shape').value;
     let shapeColor = document.querySelector('#shapeColor').value
     switch (shape) {
