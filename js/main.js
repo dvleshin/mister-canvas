@@ -6,6 +6,7 @@ let prevX;
 let prevY;
 let currX;
 let currY;
+let loop
 
 
 function init() {
@@ -59,6 +60,7 @@ function onDraw(action, ev) {
         flag = false;
         prevX = null;
         prevY = null;
+        clearInterval(loop);
     }
 
 }
@@ -75,6 +77,9 @@ function draw() {
             break;
         case 'glowShape':
             drawGlow(shapeColor)
+            break;
+        case 'rectShape':
+            drawRect(shapeColor)
             break;
     }
 }
@@ -112,6 +117,20 @@ function drawGlow(shapeColor) {
     ctx.stroke();
 }
 
+function drawRect(shapeColor) {
+    var changeSizeX = getRandomInt(5, 50)
+    var changeSizeY = getRandomInt(5, 50)
+
+    ctx.beginPath();
+    ctx.moveTo(prevX, prevY);
+    ctx.lineTo(currX, currY);
+    ctx.rect(currX, currY, changeSizeX, changeSizeY);
+    ctx.lineWidth = 0.5;
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = shapeColor;
+    ctx.stroke();
+}
+
 
 
 function saveCanvas(elLink) {
@@ -119,4 +138,10 @@ function saveCanvas(elLink) {
     elLink.href = data;
     elLink.download = 'my-img.jpg';
 
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
