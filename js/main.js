@@ -6,7 +6,7 @@ let prevX;
 let prevY;
 let currX;
 let currY;
-let loop
+
 
 
 function init() {
@@ -138,7 +138,7 @@ function drawRect(shapeColor) {
 
 function saveCanvas(elLink) {
     const data = canvas.toDataURL();
-    elLink.href = data;
+    elLink.href = data
     elLink.download = 'my-img.jpg';
 
 }
